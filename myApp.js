@@ -21,10 +21,7 @@ mongoose.connect(process.env.MONGO_URI, {
   useUnifiedTopology: true
 });
 
-var Schema = mongoose.Schema;
-
 //var person1 = new Person({name:'Adarsh', age: 28, favouriteFoods: ['Biryani', 'Coffee']})
-
 
 /** # SCHEMAS and MODELS #
 /*  ====================== */
@@ -45,19 +42,19 @@ var Schema = mongoose.Schema;
 // age :  number
 // favoriteFoods : array of strings (*)
 
-
 // Use the mongoose basic *schema types*. If you want you can also add more
 // fields, use simple validators like `required` or `unique`, and set
 // `default` values. See the [mongoose docs](http://mongoosejs.com/docs/guide.html).
 
 // <Your code here >
 
+var Schema = mongoose.Schema;
+
 var personSchema = new Schema({
   name: { type: String, required: true },
   age: Number,
-  favouriteFoods: [String]
+  favoriteFoods: [String]
 });
-
 var Person = mongoose.model("Person", personSchema);
 // **Note**: Glitch is a real server, and in real servers interactions with
 // the db are placed in handler functions, to be called when some event happens
