@@ -2,8 +2,8 @@
  * 3. FCC Mongo & Mongoose Challenges
  * ==================================
  ***********************************************/
-//xvar env = require("dotenv");
-//env.config({ path: "./.env" });
+var env = require("dotenv");
+env.config({ path: "./.env" });
 /** # MONGOOSE SETUP #
 /*  ================== */
 
@@ -19,6 +19,16 @@ mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
+
+var Schema = mongoose.Schema;
+
+var personSchema = new Schema({
+  name: {type: String, required: true},
+  age: {type: Number, min: 18, max: 70},
+  favouriteFoods: [String]
+});
+
+
 
 /** # SCHEMAS and MODELS #
 /*  ====================== */
