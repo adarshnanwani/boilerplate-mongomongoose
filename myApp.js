@@ -28,7 +28,7 @@ var personSchema = new Schema({
   favouriteFoods: [String]
 });
 
-var Person = mongoose.model('Person', personSchema);
+module.exports =  mongoose.model('Person', personSchema);
 //var person1 = new Person({name:'Adarsh', age: 28, favouriteFoods: ['Biryani', 'Coffee']})
 
 
