@@ -151,9 +151,9 @@ var createManyPeople = function(arrayOfPeople, done) {
 // Use the function argument `personName` as search key.
 
 var findPeopleByName = function(personName, done) {
-  Person.find({"name" :"Adarsh"}, function(err, data){
-  done(null , data);;
-  })
+  Person.find({ name: personName }, function(err, data) {
+    done(null, data);
+  });
 
 };
 
