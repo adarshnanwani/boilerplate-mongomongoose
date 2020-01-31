@@ -134,7 +134,7 @@ var arrayOfPeople = [
 ];
 
 var createManyPeople = function(arrayOfPeople, done) {
-  Person.create(arrayOfPeople, function() {
+  Person.create(arrayOfPeople, function(err,data) {
     done(null, data);
   });
 };
