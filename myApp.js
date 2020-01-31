@@ -28,6 +28,7 @@ var personSchema = new Schema({
   favouriteFoods: [String]
 });
 
+var Person = mongoose.model('Person', personSchema);
 
 
 /** # SCHEMAS and MODELS #
