@@ -29,6 +29,7 @@ var personSchema = new Schema({
 });
 
 var Person = mongoose.model('Person', personSchema);
+var person1 = new Person({name:'Adarsh', age: 28, favouriteFoods: ['Biryani', 'Coffee']})
 
 
 /** # SCHEMAS and MODELS #
