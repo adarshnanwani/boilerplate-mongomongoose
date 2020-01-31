@@ -134,7 +134,7 @@ var arrayOfPeople = [
 ];
 
 var createManyPeople = function(arrayOfPeople, done) {
-  Person.create(arrayOfPeople, function(err,data) {
+  Person.create(arrayOfPeople, function(err, data) {
     done(null, data);
   });
 };
@@ -154,7 +154,6 @@ var findPeopleByName = function(personName, done) {
   Person.find({ name: personName }, function(err, data) {
     done(null, data);
   });
-
 };
 
 /** 6) Use `Model.findOne()` */
@@ -167,7 +166,9 @@ var findPeopleByName = function(personName, done) {
 // argument `food` as search key
 
 var findOneByFood = function(food, done) {
-  done(null /*, data*/);
+  Person.findOne({ favoriteFoods: [food] }, function(err, data) {
+    done(null, data);
+  });
 };
 
 /** 7) Use `Model.findById()` */
