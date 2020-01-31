@@ -22,13 +22,6 @@ mongoose.connect(process.env.MONGO_URI, {
 
 var Schema = mongoose.Schema;
 
-var personSchema = new Schema({
-  name: {type: String, required: true},
-  age: {type: Number, min: 18, max: 70},
-  favouriteFoods: [String]
-});
-
-var PersonModel =  mongoose.model('Person', personSchema);
 //var person1 = new Person({name:'Adarsh', age: 28, favouriteFoods: ['Biryani', 'Coffee']})
 
 
@@ -51,13 +44,20 @@ var PersonModel =  mongoose.model('Person', personSchema);
 // age :  number
 // favoriteFoods : array of strings (*)
 
+
 // Use the mongoose basic *schema types*. If you want you can also add more
 // fields, use simple validators like `required` or `unique`, and set
 // `default` values. See the [mongoose docs](http://mongoosejs.com/docs/guide.html).
 
 // <Your code here >
 
-var Person; /* = <Your Model> */
+var personSchema = new Schema({
+  name: { type: String, required: true },
+  age: { type: Number, min: 18, max: 70 },
+  favouriteFoods: [String]
+});
+
+var Person = mongoose.model("Person", personSchema);
 
 // **Note**: Glitch is a real server, and in real servers interactions with
 // the db are placed in handler functions, to be called when some event happens
