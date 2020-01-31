@@ -181,9 +181,9 @@ var findOneByFood = function(food, done) {
 // Use the function argument 'personId' as search key.
 
 var findPersonById = function(personId, done) {
-  Person.findById(personId, function(err,data){
-    done(null , data);
-  })
+  Person.findById(personId, function(err, data) {
+    done(null, data);
+  });
 };
 
 /** # CR[U]D part III - UPDATE #
@@ -213,8 +213,13 @@ var findPersonById = function(personId, done) {
 
 var findEditThenSave = function(personId, done) {
   var foodToAdd = "hamburger";
-
-  done(null /*, data*/);
+  Person.findById(personId, function(err, data) {
+    data.favoriteFoods.push(foodToAdd);
+    var pc = new Person(data);
+    pc.save(function(err, data) {
+      done(null, data);
+    });
+  });
 };
 
 /** 9) New Update : Use `findOneAndUpdate()` */
