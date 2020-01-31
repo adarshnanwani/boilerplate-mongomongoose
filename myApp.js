@@ -57,8 +57,7 @@ var personSchema = new Schema({
   favouriteFoods: [String]
 });
 
-var PersonModel = mongoose.model("PersonModel", personSchema);
-module.exports = PersonModel;
+var Person = mongoose.model("PersonModel", personSchema);
 // **Note**: Glitch is a real server, and in real servers interactions with
 // the db are placed in handler functions, to be called when some event happens
 // (e.g. someone hits an endpoint on your API). We'll follow the same approach
