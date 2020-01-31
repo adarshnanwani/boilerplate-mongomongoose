@@ -53,7 +53,7 @@ var Schema = mongoose.Schema;
 
 var personSchema = new Schema({
   name: { type: String, required: true },
-  age: { type: Number, min: 18, max: 70 },
+  age: Number,
   favouriteFoods: [String]
 });
 
