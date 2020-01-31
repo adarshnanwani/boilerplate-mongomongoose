@@ -302,13 +302,13 @@ var removeManyPeople = function(done) {
 
 var queryChain = function(done) {
   var foodToSearch = "burrito";
-  Person.find({favoriteFoods: [foodToSearch]})
-  .sort()
-  .limit(2)
-  .select({name:1, favoriteFoods:1, age:0})
-  .exec(function(err,data){
-    done(null,data);
-  });
+  Person.find({ favoriteFoods: [foodToSearch] })
+    .sort({ name: 1 })
+    .limit(2)
+    .select({ age: 0 })
+    .exec(function(err, data) {
+      done(null, data);
+    });
 };
 
 /** **Well Done !!**
